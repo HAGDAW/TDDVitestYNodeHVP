@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { fibonacci } from '../src/fibonacci.js';
 
-const MENSAJE = 'solo números enteros entre 0 y 78';
+const MENSAJE = 'solo n\u00fameros enteros entre 0 y 78';
 
 describe('fibonacci', () => {
     describe('casos base', () => {
