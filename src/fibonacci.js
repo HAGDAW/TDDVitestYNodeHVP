@@ -1,14 +1,13 @@
-export function fibonacci(n) {
-    if (n < 0) throw new RangeError('n no puede ser negativo')
-    if (n === 0) return 0
-    if (n === 1) return 1
+const MAX = 78;
 
-    let anterior = 0
-    let actual = 1
-    for (let i = 2; i <= n; i++) {
-        const siguiente = anterior + actual
-        anterior = actual
-        actual = siguiente
+export function fibonacci(n) {
+    if (typeof n !== 'number' || !Number.isInteger(n) || n < 0 || n > MAX) {
+        throw new RangeError('solo n\u00fameros enteros entre 0 y 78');
     }
-    return actual
+    let anterior = 0;
+    let actual = 1;
+    for (let i = 0; i < n; i++) {
+        [anterior, actual] = [actual, anterior + actual];
+    }
+    return anterior;
 }
